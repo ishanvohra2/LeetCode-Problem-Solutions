@@ -6,7 +6,7 @@ using namespace std;
 string longestCommonPrefix(vector<string>& strs);
 
 int main(){
-    vector<string> strs {"flower", "flow", ""};
+    vector<string> strs {"flower", "flow", "flo"};
 
     cout<<longestCommonPrefix(strs);
 
