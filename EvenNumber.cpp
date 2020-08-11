@@ -15,12 +15,12 @@ int main(){
 }
 
 int findNumbers(vector<int>& nums){
-    int count = 0;
-
-    for(auto num : nums){
-        string n = to_string(num);
-        if(n.size() % 2 == 0) count += 1;
-    }
-
-    return count;
+        int count=0;
+        for(auto i : nums)
+        {
+            if(i>=10 && i<100) count ++;
+            if (i>=1000&&i<10000) count ++;
+            if (i ==100000) count++;
+        } 
+        return count;
 }

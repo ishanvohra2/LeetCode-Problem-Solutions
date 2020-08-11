@@ -15,6 +15,9 @@ int main(){
 }
 
 vector<int> sortedSquares(vector<int>& A){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); 
+    
     vector<int> res(A.size(), 0);
 
     int start = 0;

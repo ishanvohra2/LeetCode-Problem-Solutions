@@ -15,18 +15,22 @@ int main(){
 }
 
 int findMaxConsecutiveOnes(vector<int>& nums) {
-    int count1 = 0, count2 = 0;
-
-    for(int i = 0; i<nums.size(); i++){
-        for(int j = i; j<nums.size(); j++){
-            if(nums[j] == 1) count1 += 1;
-            else break;
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
+        if(nums.empty())
+            return 0;
+        
+        int count = 0;
+        int finalCount = 0;
+        for(int i = 0; i < nums.size(); i++, count++)
+        {
+            if(i == nums.size()-1 || nums[i] == 0)
+            {
+                if(nums[i] == 1) count++;
+                if(count > finalCount) finalCount = count;
+                count = -1;
+            }
         }
-        if(count1 > count2){
-            count2 = count1;
-        }
-        count1 = 0;
-    }
-
-    return count2;
+        return finalCount;
 }
